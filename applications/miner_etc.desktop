@@ -1,0 +1,8 @@
+[Desktop]
+Name=Mine ETC
+Exec=/etc/miner/init.sh
+Terminal=true
+Type=Application
+Icon=/etc/miner/logo.png
+Categories=Application;
+Keywords=Mining;ETC
