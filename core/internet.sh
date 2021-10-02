@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 echo "script ${0} started...."
+source /etc/miner/conf.sh
+
 function connect_to_wifi() {
     local msg
     echo "Connecting to wifi..."
     msg=$(curl -L -i -s -k -X $'POST' \
     -H $'Host: 10.0.0.11:8090' -H $'Content-Length: 77' -H $'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36' -H $'Content-Type: application/x-www-form-urlencoded' -H $'Accept: */*' -H $'Origin: http://10.0.0.11:8090' -H $'Referer: http://10.0.0.11:8090/' -H $'Accept-Encoding: gzip, deflate' -H $'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' -H $'Connection: close' \
-    --data-binary $'mode=191&username=200303124264&password=bf%4066&a=1630404423764&producttype=0' \
+    --data-binary $'mode=191&username=${USERNAME}&password=${PASSWORD}&a=1630404423764&producttype=0' \
     $'http://10.0.0.11:8090/login.xml')
 }
 
