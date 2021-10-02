@@ -7,7 +7,7 @@ if (( EUID != 0 )); then
 fi
 
 (
-    cp application/*  /usr/share/applications/;echo "33"; echo "# installing app...";  \
-    cp application/*  ~/Desktop;echo "33"; echo "# installing app...";  \
+    cp applications/*  /usr/share/applications/;echo "33"; echo "# installing app...";  \
+    cp applications/*  ~/Desktop;echo "33"; echo "# installing app...";  \
     cp core /etc/miner ;echo "100"; echo "# installing scripts...";  \
 ) | zenity --progress --title="Installing miner" --percentage=0 --auto-close && zenity --info --text="Installation done"
